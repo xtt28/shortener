@@ -19,6 +19,7 @@ Instantly generate shortened links online with custom aliases.
 ## Badges
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/xtt28/shortener)](https://goreportcard.com/report/github.com/xtt28/shortener)
 
 ## Run Locally
 
