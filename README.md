@@ -90,8 +90,9 @@ Please refer to the `template.env` file for an example.
 
 ## Contributing
 
-Contributions are always welcome. Please write tests for your code and run it
-through `gofmt`.
+Contributions are always welcome. Please:
+1. write tests for your code;
+2. run it through `go fmt` and `go vet`.
 
 ## License
 
