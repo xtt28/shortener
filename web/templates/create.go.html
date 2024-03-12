@@ -1,0 +1,103 @@
+{{ template "top" . }}
+<header class="mb-4 rounded-3">
+	<h1>Shorten any website link online</h1>
+	<p>
+		Generate catchy short links in a flash and share them with the
+		world.
+	</p>
+	<div id="response-container"></div>
+	<form
+		hx-post="/api/create"
+		hx-target="#response-container"
+		hx-target-*="#response-container"
+	>
+		<div class="mb-3">
+			<label class="form-label w-100">
+				Long URL
+				<input
+					type="url"
+					name="destination"
+					class="form-control w-100"
+					required
+				/>
+			</label>
+		</div>
+		<div class="mb-3">
+			<label class="form-label w-100">
+				Alias (optional)
+				<input
+					type="text"
+					name="alias"
+					maxlength="20"
+					pattern="[A-Za-z0-9_]{0,20}"
+					class="form-control w-100"
+				/>
+				<div class="form-text">
+					Must be 20 characters or less and
+					contain only letters, numbers and
+					underscores.
+				</div>
+			</label>
+		</div>
+		<button class="btn btn-primary">
+			<i class="bi bi-plus"></i>
+			Create
+		</button>
+	</form>
+</header>
+<section>
+	<article>
+		<h2>What is a link shortener?</h2>
+		<p>
+			A link shortener is a tool designed to condense lengthy
+			URLs into shorter, more manageable links. It works by
+			taking a long URL and generating a unique, abbreviated
+			link that redirects users to the original destination
+			when clicked. These shortened links typically consist of
+			a domain name followed by a string of characters,
+			offering a concise alternative to unwieldy URLs.
+		</p>
+	</article>
+	<article>
+		<h2>How are link shorteners useful?</h2>
+		<ul>
+			<li>
+				<strong>Space Efficiency:</strong> Long URLs can
+				be cumbersome, especially in character-limited
+				platforms like social media posts, emails, or
+				SMS messages. Shortened links conserve space,
+				allowing users to convey information more
+				efficiently.
+			</li>
+			<li>
+				<strong>Improved Aesthetics:</strong> Shortened
+				links are visually cleaner and more
+				aesthetically pleasing compared to their lengthy
+				counterparts. They enhance the presentation of
+				content across different platforms, enhancing
+				user experience.
+			</li>
+			<li>
+				<strong>Enhanced Shareability:</strong>
+				Shortened links are easier to share and
+				remember, making them more likely to be shared
+				by users. This increased shareability can lead
+				to broader reach and engagement with content.
+			</li>
+			<li>
+				<strong>Customizability:</strong> Create branded
+				or memorable short links, reinforcing brand
+				identity and increasing trust among users.
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h2>Is it open source?</h2>
+		<p>
+			<strong>Yes!</strong> You can view and contribute to the
+			project's source code on our
+			<a href="https://github.com/xtt28/shortener">GitHub</a>.
+		</p>
+	</article>
+</section>
+{{ template "bottom" . }}

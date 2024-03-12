@@ -1,0 +1,40 @@
+<div class="alert alert-success" role="alert">
+	<h4 class="alert-heading">Link generated</h4>
+	<p>
+		You can access your link at
+		<a href="{{ .Link }}" target="_blank">{{ .Link }}</a>
+		{{ if .LinkWithAlias }} or
+		<a href="{{ .LinkWithAlias }}" target="_blank"
+			>{{ .LinkWithAlias }}</a
+		>
+		{{ end }}
+	</p>
+	<hr />
+	<p class="mb-0">
+		<button class="btn btn-success" id="btn-copy">
+			<i class="bi bi-copy"></i>
+			Copy
+		</button>
+		<button class="btn btn-success" id="btn-share">
+			<i class="bi bi-share"></i>
+			Share
+		</button>
+	</p>
+</div>
+<script>
+	document.getElementById("btn-copy").onclick = () => {
+		const preferredLink = "{{ .LinkWithAlias }}" || "{{ .Link }}";
+		navigator.clipboard.writeText(preferredLink);
+	};
+
+	document.getElementById("btn-share").onclick = () => {
+		const preferredLink = "{{ .LinkWithAlias }}" || "{{ .Link }}";
+		if (navigator.share) {
+			navigator.share({
+				url: preferredLink,
+			});
+		} else {
+			alert("Your browser doesn't support sharing.");
+		}
+	};
+</script>

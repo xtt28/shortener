@@ -21,7 +21,7 @@
 
 # Web
 !prettierrc.json
-!web/*
+!web/*/*
 
 # !Makefile
 
